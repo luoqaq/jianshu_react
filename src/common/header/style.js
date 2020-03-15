@@ -184,6 +184,9 @@ export const SearchPop = styled.div.attrs({
     border: 12px solid transparent;
     border-bottom-color: #fff;
   }
+  &:hover {
+    display: block;
+  }
 `
 
 export const SearchHot = styled.div`
@@ -199,10 +202,13 @@ export const SearchHotSwitch = styled.span`
   cursor: pointer;
   white-space: nowrap;
   .iconfont {
+    display: inline-block;
     position: static;
     margin-right: 5px;
     font-size: 13px;
     color: #999;
+    transition: transform .3s ease-in-out;
+    transform: rotate(0deg)
   }
 `
 

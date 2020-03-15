@@ -22,7 +22,8 @@ import {
 
 class Header extends Component {
   render() {
-    const { value, searchHotList, handleChangeValue, handleFocusSearch } = this.props
+    const { value, searchHotList, currentHotPage, hotPageSize, handleChangeValue, handleFocusSearch, handleSearchHotSwitch } = this.props
+    console.log(currentHotPage, hotPageSize)
     return(
       <HeaderWrapper>
         <Logo href="/"></Logo>
@@ -45,19 +46,25 @@ class Header extends Component {
           <Button className="index">首页</Button>
           <Button className="app">下载APP</Button>
           <SearchWrapper>
-            <Search value={value} onChange={(e) => handleChangeValue(e)} onFocus={handleFocusSearch}></Search>
+            <Search value={value} onChange={(e) => handleChangeValue(e)} onFocus={() => handleFocusSearch(searchHotList)}></Search>
             <i className="iconfont icon-search"></i>
             <SearchPop>
               <SearchHot>
                 热门搜索
-                <SearchHotSwitch>
-                  <i className="iconfont icon-reset"></i>
+                <SearchHotSwitch onClick={() => handleSearchHotSwitch(currentHotPage, hotPageSize, searchHotList.length, this.searchHotSwitchIcon)}>
+                  <i ref={(el) => {this.searchHotSwitchIcon = el}} className="iconfont icon-reset"></i>
                   换一批
                 </SearchHotSwitch>
                 <SearchHotList>
-                  {searchHotList.map(item => (
-                    <SearchHotItem key={item}>{item}</SearchHotItem>
-                  ))}
+                  {searchHotList.map((item, index) => {
+                    let start = (currentHotPage - 1) * hotPageSize
+                    let end = currentHotPage * hotPageSize
+                    if (index >= start && end> index) {
+                      return <SearchHotItem key={item}>{item}</SearchHotItem>
+                    }else {
+                      return ''
+                    }
+                  })}
                 </SearchHotList>
               </SearchHot>
             </SearchPop>
@@ -71,7 +78,9 @@ class Header extends Component {
 const mapStateToProps = (state) => {
   return ({
     value: state.header.inputValue,
-    searchHotList: state.header.searchHotList
+    searchHotList: state.header.searchHotList,
+    currentHotPage: state.header.currentHotPage,
+    hotPageSize: state.header.hotPageSize
   })
 }
 
@@ -80,8 +89,19 @@ const mapDispatchToProps = (dispatch) => {
     handleChangeValue: (e) => {
       dispatch(actionCreators.changeHeaderInputValue(e.target.value))
     },
-    handleFocusSearch: () => {
+    handleFocusSearch: (list) => {
+      if (list && list.length > 0) return
       dispatch(actionCreators.getSearchHotList())
+    },
+    handleSearchHotSwitch: (currentHotPage, pageSize, length, searchHotSwitchIcon) => {
+      let deg = searchHotSwitchIcon.style.transform ? searchHotSwitchIcon.style.transform.replace(/\D/g, '') - 0 : 0
+      searchHotSwitchIcon.style.transform = `rotate(${180 + deg}deg)`
+      let totalPage = Math.ceil(length / pageSize)
+      if (currentHotPage < totalPage) {
+        dispatch(actionCreators.changeHeaderCurrentHotPage(currentHotPage + 1))
+      }else {
+        dispatch(actionCreators.changeHeaderCurrentHotPage(1))
+      }
     }
   })
 }
