@@ -23,7 +23,6 @@ import {
 class Header extends Component {
   render() {
     const { value, searchHotList, currentHotPage, hotPageSize, handleChangeValue, handleFocusSearch, handleSearchHotSwitch } = this.props
-    console.log(currentHotPage, hotPageSize)
     return(
       <HeaderWrapper>
         <Logo href="/"></Logo>

@@ -146,6 +146,7 @@ export const Search = styled.input.attrs({
 `
 
 export const SettingPop = styled.div`
+  display: none;
   position: absolute;
   top: ${HeaderHeight};
   right: -50px;
