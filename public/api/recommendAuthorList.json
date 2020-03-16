@@ -1,0 +1,40 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": 0,
+      "name": "简书钻首席小管家",
+      "words": 311.3,
+      "likeCount": 166.3,
+      "avtar": "https://upload.jianshu.io/users/upload_avatars/14715425/e0668349-8c75-43db-8a9d-c388e5f00d0d.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp"
+    },
+    {
+      "id": 1,
+      "name": "董克平日记",
+      "words": 988.3,
+      "likeCount": 3.3,
+      "avtar": "https://upload.jianshu.io/users/upload_avatars/9988193/fc26c109-1ae6-4327-a298-2def343e9cd8.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp"
+    },
+    {
+      "id": 2,
+      "name": "格列柯南",
+      "words": 311.3,
+      "likeCount": 166.3,
+      "avtar": "https://upload.jianshu.io/users/upload_avatars/3730494/4a86a2a7-d5b9-47f1-969a-d8ef4711488b.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp"
+    },
+    {
+      "id": 3,
+      "name": "老沈1",
+      "words": 311.3,
+      "likeCount": 166.3,
+      "avtar": "https://upload.jianshu.io/users/upload_avatars/7416466/fc1a1a0d-e3c7-4bca-9720-028c5c9914f3.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp"
+    },
+    {
+      "id": 4,
+      "name": "三儿王屿",
+      "words": 311.3,
+      "likeCount": 166.3,
+      "avtar": "https://upload.jianshu.io/users/upload_avatars/3950651/acfaa0ce-42fe-424a-b7c8-9a0136fb96ec.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp"
+    }
+  ]
+}

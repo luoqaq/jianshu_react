@@ -3,12 +3,12 @@ import { createGlobalStyle } from 'styled-components'
 export const IconFontStyle = createGlobalStyle`
   @font-face {
     font-family: 'iconfont';  /* project id 1690489 */
-    src: url('//at.alicdn.com/t/font_1690489_ux3ftsry8w9.eot');
-    src: url('//at.alicdn.com/t/font_1690489_ux3ftsry8w9.eot?#iefix') format('embedded-opentype'),
-    url('//at.alicdn.com/t/font_1690489_ux3ftsry8w9.woff2') format('woff2'),
-    url('//at.alicdn.com/t/font_1690489_ux3ftsry8w9.woff') format('woff'),
-    url('//at.alicdn.com/t/font_1690489_ux3ftsry8w9.ttf') format('truetype'),
-    url('//at.alicdn.com/t/font_1690489_ux3ftsry8w9.svg#iconfont') format('svg');
+    src: url('//at.alicdn.com/t/font_1690489_ulai0o3k9t.eot');
+    src: url('//at.alicdn.com/t/font_1690489_ulai0o3k9t.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_1690489_ulai0o3k9t.woff2') format('woff2'),
+    url('//at.alicdn.com/t/font_1690489_ulai0o3k9t.woff') format('woff'),
+    url('//at.alicdn.com/t/font_1690489_ulai0o3k9t.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_1690489_ulai0o3k9t.svg#iconfont') format('svg');
   }
 
   .iconfont {
@@ -32,6 +32,22 @@ export const IconFontStyle = createGlobalStyle`
   }
 
   .icon-reset:before {
-    content: "\\e739"
+    content: "\\e739";
+  }
+
+  .icon-diamond::before {
+    content: "\\e62e";
+  }
+
+  .icon-comment::before {
+    content: "\\e6c7";
+  }
+  
+  .icon-heart::before {
+    content: "\\e6b3";
+  }
+
+  .icon-reward::before {
+    content: "\\e611";
   }
 `
