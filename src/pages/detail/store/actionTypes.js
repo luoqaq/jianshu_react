@@ -1,0 +1,1 @@
+export const CHANGE_ARTICLE_DETAIL = 'change_article_detail'

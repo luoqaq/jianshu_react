@@ -13,6 +13,7 @@ class ArticleList extends Component {
           list.map(item => (
             <Article
               key={item.id}
+              id={item.id}
               title={item.title}
               author={item.author}
               discription={item.discription} 

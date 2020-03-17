@@ -81,6 +81,7 @@ export const Button = styled.a`
   &.index {
     font-size: 17px;
     color: #ec7259;
+    padding-left: 0;
   }
   &.app {
     font-size: 17px;

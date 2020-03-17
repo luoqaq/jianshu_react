@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 class Article extends Component {
   render() {
-    const { title, img, discription, author, diamonCount, commentCount, likeCount, rewardCount } = this.props
+    const { id, title, img, discription, author, diamonCount, commentCount, likeCount, rewardCount } = this.props
     return(
       <div className="article">
         <div className="article_left">
-          <p className="title">{title}</p>
+          <Link to={`/detail/${id}`}>
+            <p className="title">{title}</p>
+          </Link>
           <p className="content">{discription}</p>
           <div className="meta">
             <span className="diamon">
